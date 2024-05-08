@@ -10,12 +10,12 @@ function AddTask() {
       <Button type="button" color="#2e2ed2" textColor="#ffffff" onClick={()=>setModelOpen(true)}>
         Add Task
       </Button>
-      <SelectStatusButton color="#837c7c" textColor="#242222" id="status">
+      <SelectStatusButton color="#cfcaca" textColor="#242222" id="status">
         <option value="All">All</option>
         <option value="Complete">Complete</option>
         <option value="Incomplete">Incomplete</option>
       </SelectStatusButton>
-      <TaskModel modelOpen={modelOpen} setModelOpen={setModelOpen} />
+      <TaskModel type="add" modelOpen={modelOpen} setModelOpen={setModelOpen} />
     </div>
   );
 }

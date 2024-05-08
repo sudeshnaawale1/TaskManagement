@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import TaskItem from './TaskItem';
 
 function TaskContent() {
      
@@ -14,7 +15,12 @@ function TaskContent() {
   return (
    <div>
     {
-        taskListSorted && taskListSorted.length > 0 ? 'task here' : 'task not found'
+        taskListSorted && taskListSorted.length > 0 ? 
+        taskListSorted.map((task)=>(
+          <TaskItem key={task.id} task={task}/>
+        ))
+        : 
+        'task not found'
     }
    </div>
   )
