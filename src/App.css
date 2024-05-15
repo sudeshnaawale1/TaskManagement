@@ -1,27 +1,27 @@
-body{
+body {
   background-color: #efecec;
 }
 /* CSS for Task Content */
-.task-container{
+.task-container {
   width: 90%;
-	max-width: 1200px;
-	margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.task-title{
+.task-title {
   text-align: center;
   margin: 20px 0;
 }
-.task-wrapper{
+.task-wrapper {
   max-width: 750px;
-	width: 100%;
-	margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.add-task-container{
+.add-task-container {
   display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
 }
 
 /* CSS for Modal */
@@ -94,14 +94,14 @@ body{
 
 .model-form label input,
 .model-form label select {
-    border: none;
-    font-size: 1.2rem;
-    margin-bottom: 0.7rem;
-    margin-top: .4rem;
-    padding: 0.5rem;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 0.4rem;    
+  border: none;
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  margin-top: 0.4rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.4rem;
 }
 
 .model-buttonContainer {
@@ -181,8 +181,8 @@ body{
 
 .task-item-details {
   display: grid;
-  grid-template-columns: auto 1fr; 
-  gap: 1rem; 
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
 }
 
 .task-item-checkbox,
@@ -192,53 +192,68 @@ body{
 }
 
 .task-item-comments {
-  grid-column: span 2; 
+  grid-column: span 2;
 }
 
 .task-item-text {
-	word-break: break-all;
-	font-weight: 400;
-	font-size: 1.1rem;
-	color: #000;
+  word-break: break-all;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #000;
 }
 
 .task-item-text--completed {
-	text-decoration: line-through;
-	opacity: 0.7;
+  text-decoration: line-through;
+  opacity: 0.7;
 }
 
 .task-item-time {
-	display: block;
-	font-size: 1.2rem;
-	font-weight: 300;
-	margin-top: -0.2rem;
-	color: var(--black-2);
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: -0.2rem;
+  color: var(--black-2);
 }
 
 .task-item-actions {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.task-item-hidden-comments {
+  display: none;
+  margin-top: -10px;
 }
 
 .task-item-icon {
-	font-size: 2rem;
-	padding: 0.5rem;
-	border-radius: 4px;
-	background-color: #cfcaca;
-	color: black;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition: 0.3s ease background-color;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #cfcaca;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease background-color;
 }
 
 .task-item-icon:hover {
-	background-color: gray;
+  background-color: gray;
 }
 
+.task-no-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem;
+  font-weight: 600;
+  background-color: #e4dcdc;
+  margin-top: 1.5rem;
+  border-radius: 0.4rem;
+}
 
 /* 
 .button{

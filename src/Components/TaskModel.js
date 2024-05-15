@@ -10,7 +10,6 @@ function TaskModel({ type, modelOpen, setModelOpen, task }) {
   const [title, setTitle] = useState("");
   const [status, setStatus] = useState("incomplete");
   const [comment, setComment] = useState("");
-  // const [image, setImage] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -36,7 +35,6 @@ function TaskModel({ type, modelOpen, setModelOpen, task }) {
             title,
             status,
             comment,
-            time: new Date().toLocaleString(),
           })
         );
         toast.success("Task Created Successfully");
@@ -56,15 +54,14 @@ function TaskModel({ type, modelOpen, setModelOpen, task }) {
           );
         } else {
           toast.error("No Changes Made");
-        }        
+        }
       }
       setModelOpen(false);
     } else {
-      toast.error(title === "" ? "Title should not be empty" : " ");
+      if (title === "") {
+        toast.error("Title should not be empty");
+      }
     }
-    // setTitle('')
-    // setStatus('incomplete')
-    // setComment('')
     // console.log("title:", title)
     // console.log("status:", status)
   };
@@ -106,15 +103,19 @@ function TaskModel({ type, modelOpen, setModelOpen, task }) {
                   <option value="incomplete">Incomplete</option>
                 </select>
               </label>
-              <label htmlFor="title">
-                Comments (Optional)
-                <input
-                  type="text"
-                  id="comment"
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                />
-              </label>
+              {status === "complete" ? (
+                <label htmlFor="title">
+                  Comments
+                  <input
+                    type="text"
+                    id="comment"
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                  />
+                </label>
+              ) : (
+                ""
+              )}
               <div className="model-buttonContainer">
                 <Button type="submit" color="#2e2ed2" textColor="#ffffff">
                   {type === "update" ? "Update" : "Add"} Task

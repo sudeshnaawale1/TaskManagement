@@ -4,7 +4,6 @@ function CheckButton() {
   return (
     <div className="task-item-svg">
       <svg
-        className= ""
         viewBox="0 0 53 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
