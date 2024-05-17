@@ -7,24 +7,31 @@ import { updatedSelectedStatus } from "../redux/slices/taskSlice";
 function AddTask() {
   const [modelOpen, setModelOpen] = useState(false);
 
-  // const [statusChange, setStatusChange] = useState("all");
-  
   const dispatch = useDispatch();
-  const selectedStatus = useSelector((state) => state.task.selectedStatus); 
+  const selectedStatus = useSelector((state) => state.task.selectedStatus);
 
-  const handStatusChange = (e) =>{  
-     
+  const handStatusChange = (e) => {
     const status = e.target.value;
-    dispatch(updatedSelectedStatus(status)) 
-
-  }
+    dispatch(updatedSelectedStatus(status));
+  };
 
   return (
     <div className="add-task-container">
-      <Button type="button" color="#2e2ed2" textColor="#ffffff" onClick={()=>setModelOpen(true)}>
+      <Button
+        type="button"
+        color="#2e2ed2"
+        textColor="#ffffff"
+        onClick={() => setModelOpen(true)}
+      >
         Add Task
       </Button>
-      <SelectStatusButton color="#cfcaca" textColor="#242222" id="status" value={selectedStatus} onChange={(e)=>handStatusChange(e)}>
+      <SelectStatusButton
+        color="#cfcaca"
+        textColor="#242222"
+        id="status"
+        value={selectedStatus}
+        onChange={(e) => handStatusChange(e)}
+      >
         <option value="all">All</option>
         <option value="complete">Complete</option>
         <option value="incomplete">Incomplete</option>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button({color, textColor, type, children, ...rest }) {
+function Button({color, textColor, type, children,...rest }) {
     const buttonStyle = {
         border: 'none',
         borderRadius: '6px',

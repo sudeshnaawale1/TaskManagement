@@ -17,14 +17,21 @@ body {
   margin: 0 auto;
 }
 
+.task-content-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .add-task-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
+  margin-bottom: 0.5rem;
 }
 
-/* CSS for Modal */
+/* CSS for Model */
 .model-wrapper {
   position: fixed;
   top: 0;
@@ -120,22 +127,23 @@ body {
   justify-content: space-between;
   padding: 0.7rem;
   background: #fff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   border-radius: 0.4rem;
+}
+
+.task-item label {
+  font-size: 0.9rem;
+  color: #2b2727;
+  font-weight: 500;
+}
+.task-item p {
+  color: #2b2727;
+  font-size: 0.9rem;
 }
 
 .task-item:last-child {
   margin-bottom: 0;
 }
-
-/* .task-item-details {
-	display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-	align-items: center; 
-	justify-content: flex-start;
-	gap: 1rem;
-} */
 
 .task-item-svg {
   flex-basis: 25px;
@@ -162,22 +170,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-/* .task-item-texts {
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-}*/
-
-/* .task-item-comments {
-  margin-top: 1rem;
-}  */
-
-/* .task-item-checkbox,
-.task-item-texts {
-    display: flex;
-    align-items: center;
-} */
 
 .task-item-details {
   display: grid;
@@ -228,8 +220,8 @@ body {
 }
 
 .task-item-icon {
-  font-size: 2rem;
-  padding: 0.5rem;
+  font-size: 1.5rem;
+  padding: 0.3rem;
   border-radius: 4px;
   background-color: #cfcaca;
   color: black;
@@ -254,22 +246,3 @@ body {
   margin-top: 1.5rem;
   border-radius: 0.4rem;
 }
-
-/* 
-.button{
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1.6rem;
-    font-weight: 500;
-    height: auto;
-    overflow: hidden;
-    padding: .8rem 2rem;
-    text-decoration: none;
-    text-transform: capitalize;
-}
-.button-primary{
-  color: white;
-  background-color: blue;
-} */

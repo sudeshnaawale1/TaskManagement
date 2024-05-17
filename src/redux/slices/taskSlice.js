@@ -10,7 +10,7 @@ const getInitialList = () => {
 };
 
 const initialValue = {
-  selectedStatus: 'all',
+  selectedStatus: "all",
   taskList: getInitialList(),
 };
 
@@ -43,11 +43,11 @@ export const taskSlice = createSlice({
         });
         localStorage.setItem("taskList", JSON.stringify(taskListArr));
         state.taskList = taskListArr;
-      }      
+      }
     },
     updateTaskStatus: (state, action) => {
       const { taskId, newStatus } = action.payload;
-      state.taskList = state.taskList.map(task =>
+      state.taskList = state.taskList.map((task) =>
         task.id === taskId ? { ...task, status: newStatus } : task
       );
       localStorage.setItem("taskList", JSON.stringify(state.taskList));
@@ -58,11 +58,22 @@ export const taskSlice = createSlice({
       localStorage.setItem("taskList", JSON.stringify(taskListArr));
       state.taskList = taskListArr;
     },
-    updatedSelectedStatus : (state, action) => {
-      state.selectedStatus = action.payload
-    }
+    deleteAllTask: (state, action) => {
+      localStorage.setItem("taskList", JSON.stringify([]));
+      state.taskList = [];
+    },
+    updatedSelectedStatus: (state, action) => {
+      state.selectedStatus = action.payload;
+    },
   },
 });
 
-export const { addTask, deleteTask, updateTask, updateTaskStatus, updatedSelectedStatus } = taskSlice.actions;
+export const {
+  addTask,
+  deleteTask,
+  updateTask,
+  updateTaskStatus,
+  updatedSelectedStatus,
+  deleteAllTask,
+} = taskSlice.actions;
 export default taskSlice.reducer;

@@ -17,17 +17,18 @@ function TaskItem({ task, selectedStatus }) {
     setUpdateModal(true);
   };
   const handleDelete = () => {
-    dispatch(deleteTask(task.id));
-    toast.success("Task Deleted Successfully");
+    if (task.status === "complete") {
+      dispatch(deleteTask(task.id));
+      toast.success("Task Deleted Successfully");
+    } else {
+      toast.error("Task is incomplete");
+    }
   };
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
     const newStatus = isChecked ? "incomplete" : "complete";
     dispatch(updateTaskStatus({ taskId: task.id, newStatus }));
-    if (!isChecked && task.comment == "") {
-      setUpdateModal(true);
-    }
   };
 
   useEffect(() => {
@@ -52,20 +53,18 @@ function TaskItem({ task, selectedStatus }) {
                 isChecked ? "task-item-text--completed" : ""
               }`}
             >
-              <p>Title: {task.title}</p>
+              <p>
+                <label>Title:</label> {task.title}
+              </p>
             </div>
-            {task.status === "complete" && (
-              <div
-                className={`task-item-comments ${
-                  isChecked ? "" : "task-item-hidden-comments"
-                }`}
-              >
-                <p>Comments: {task.comment}</p>
+            {task.status === "complete" && isChecked && task.comment && (
+              <div className="task-item-comments">
+                <p>
+                  <label>Comments: </label>
+                  {task.comment}
+                </p>
               </div>
             )}
-            {/* <div className="task-item-comments">
-            <p>Comments: {task.comment}</p>
-          </div> */}
           </div>
           <div className="task-item-actions">
             <div
@@ -78,7 +77,7 @@ function TaskItem({ task, selectedStatus }) {
             </div>
             <div
               className="task-item-icon"
-              onClick={handleDelete}
+              onClick={() => handleDelete()}
               role="button"
               tabIndex={0}
             >
